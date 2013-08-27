@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBSizer.WinForms.UI", "DBSizer.WinForms.UI\DBSizer.WinForms.UI.csproj", "{D5C90716-2AF2-4FB6-A043-008F1B9AB05B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBSizer.Data", "DBSizer.Logic\DBSizer.Data.csproj", "{F4B46FD2-2723-485E-899B-8310C20BF2F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBSizer.ViewInterface", "DBSizer.ViewInterface\DBSizer.ViewInterface.csproj", "{3D526DA8-5EA4-4DB3-94ED-329FEC44E0A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBSizer.ViewPresenter", "DBSizer.ViewPresenter\DBSizer.ViewPresenter.csproj", "{33BA6597-1D9D-4B6B-A727-19D7FD33D9EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBSizer.Winforms.Starter", "DBSizer.Winforms.Starter\DBSizer.Winforms.Starter.csproj", "{3E6808CE-5CD8-4DFD-A838-8F0ACE5458F7}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DBSizer.Architecture", "DBSizer.Architecture\DBSizer.Architecture.modelproj", "{D09504A0-4558-4888-BA8C-A5DB5DAF0C9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5C90716-2AF2-4FB6-A043-008F1B9AB05B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C90716-2AF2-4FB6-A043-008F1B9AB05B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C90716-2AF2-4FB6-A043-008F1B9AB05B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C90716-2AF2-4FB6-A043-008F1B9AB05B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B46FD2-2723-485E-899B-8310C20BF2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B46FD2-2723-485E-899B-8310C20BF2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B46FD2-2723-485E-899B-8310C20BF2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B46FD2-2723-485E-899B-8310C20BF2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D526DA8-5EA4-4DB3-94ED-329FEC44E0A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D526DA8-5EA4-4DB3-94ED-329FEC44E0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D526DA8-5EA4-4DB3-94ED-329FEC44E0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D526DA8-5EA4-4DB3-94ED-329FEC44E0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BA6597-1D9D-4B6B-A727-19D7FD33D9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BA6597-1D9D-4B6B-A727-19D7FD33D9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BA6597-1D9D-4B6B-A727-19D7FD33D9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33BA6597-1D9D-4B6B-A727-19D7FD33D9EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E6808CE-5CD8-4DFD-A838-8F0ACE5458F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E6808CE-5CD8-4DFD-A838-8F0ACE5458F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E6808CE-5CD8-4DFD-A838-8F0ACE5458F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E6808CE-5CD8-4DFD-A838-8F0ACE5458F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09504A0-4558-4888-BA8C-A5DB5DAF0C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09504A0-4558-4888-BA8C-A5DB5DAF0C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09504A0-4558-4888-BA8C-A5DB5DAF0C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09504A0-4558-4888-BA8C-A5DB5DAF0C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

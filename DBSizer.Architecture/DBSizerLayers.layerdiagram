@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="4dd91fc7-d39c-427b-93ff-6f82ccf477ec" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="c5807651-43f1-44cf-a18c-f7ab677041dc" name="DBSizer.Data">
+      <references>
+        <reference Id="367c1691-f6bb-4410-871d-0747b0ae8e23" name="DBSizer.Data">
+          <ArtifactNode Label="DBSizer.Data" Category="CodeSchema_Project" Id="(Assembly=../DBSizer.Logic/DBSizer.Data.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DBSizer.Data)" Label="DBSizer.Data.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="0332ef5a-d51f-4fbd-9480-92f8a07eb135" name="DBSizer.ViewInterface">
+      <references>
+        <reference Id="485aac57-04f9-425d-9362-a28851ba5a1e" name="DBSizer.ViewInterface">
+          <ArtifactNode Label="DBSizer.ViewInterface" Category="CodeSchema_Project" Id="(Assembly=../DBSizer.ViewInterface/DBSizer.ViewInterface.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DBSizer.ViewInterface)" Label="DBSizer.ViewInterface.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="5bae4371-b13c-45ca-a754-45d9af53832a" name="DBSizer.ViewPresenter">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="385ae688-cc61-441a-bd17-6da0f88244b6" direction="Forward">
+          <layerMoniker Id="0332ef5a-d51f-4fbd-9480-92f8a07eb135" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a87fa93b-9864-409f-9923-7a40ab9c1827" direction="Forward">
+          <layerMoniker Id="c5807651-43f1-44cf-a18c-f7ab677041dc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="84b42a10-644b-428d-98ab-ceeb8c126b9e" name="DBSizer.ViewPresenter">
+          <ArtifactNode Label="DBSizer.ViewPresenter" Category="CodeSchema_Project" Id="(Assembly=../DBSizer.ViewPresenter/DBSizer.ViewPresenter.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DBSizer.ViewPresenter)" Label="DBSizer.ViewPresenter.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="05cd032d-14e2-431e-a925-0bafa27cb926" name="DBSizer.WinForms.UI">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9e2881f8-3dae-4e78-9159-807bc367f05a" direction="Forward">
+          <layerMoniker Id="0332ef5a-d51f-4fbd-9480-92f8a07eb135" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="1acaabbf-bdf3-4a03-9994-1e136e282698" direction="Forward">
+          <layerMoniker Id="c5807651-43f1-44cf-a18c-f7ab677041dc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="c820c4ae-6f5e-4faa-b6c5-6f05d72d429b" name="DBSizer.WinForms.UI">
+          <ArtifactNode Label="DBSizer.WinForms.UI" Category="CodeSchema_Project" Id="(Assembly=../DBSizer.WinForms.UI/DBSizer.WinForms.UI.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WinForms.UI)" Label="DBSizer.WinForms.UI.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

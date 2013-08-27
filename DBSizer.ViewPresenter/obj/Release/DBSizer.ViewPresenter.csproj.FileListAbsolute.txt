@@ -1,0 +1,9 @@
+D:\Work\DBSizer\DBSizer.ViewPresenter\obj\Release\DBSizer.ViewPresenter.csprojResolveAssemblyReference.cache
+D:\Work\DBSizer\DBSizer.ViewPresenter\bin\Release\DBSizer.ViewPresenter.dll
+D:\Work\DBSizer\DBSizer.ViewPresenter\bin\Release\DBSizer.ViewPresenter.pdb
+D:\Work\DBSizer\DBSizer.ViewPresenter\bin\Release\DBSizer.Data.dll
+D:\Work\DBSizer\DBSizer.ViewPresenter\bin\Release\DBSizer.ViewInterface.dll
+D:\Work\DBSizer\DBSizer.ViewPresenter\bin\Release\DBSizer.Data.pdb
+D:\Work\DBSizer\DBSizer.ViewPresenter\bin\Release\DBSizer.ViewInterface.pdb
+D:\Work\DBSizer\DBSizer.ViewPresenter\obj\Release\DBSizer.ViewPresenter.dll
+D:\Work\DBSizer\DBSizer.ViewPresenter\obj\Release\DBSizer.ViewPresenter.pdb

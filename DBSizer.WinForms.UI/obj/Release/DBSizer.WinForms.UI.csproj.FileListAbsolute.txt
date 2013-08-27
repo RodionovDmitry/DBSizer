@@ -1,0 +1,14 @@
+D:\Work\DBSizer\DBSizer.WinForms.UI\bin\Release\DBSizer.WinForms.UI.pdb
+D:\Work\DBSizer\DBSizer.WinForms.UI\obj\Release\DBSizer.WinForms.UI.Properties.Resources.resources
+D:\Work\DBSizer\DBSizer.WinForms.UI\obj\Release\DBSizer.WinForms.UI.csproj.GenerateResource.Cache
+D:\Work\DBSizer\DBSizer.WinForms.UI\obj\Release\DBSizer.WinForms.UI.pdb
+D:\Work\DBSizer\DBSizer.WinForms.UI\obj\Release\DBSizer.WinForms.UI.csprojResolveAssemblyReference.cache
+D:\Work\DBSizer\DBSizer.WinForms.UI\obj\Release\DBSizer.WinForms.UI.DataBasesForm.resources
+D:\Work\DBSizer\DBSizer.WinForms.UI\obj\Release\DBSizer.WinForms.UI.SqlConnectionSettingsControl.resources
+D:\Work\DBSizer\DBSizer.WinForms.UI\obj\Release\DBSizer.WinForms.UI.DatabaseDetailsForm.resources
+D:\Work\DBSizer\DBSizer.WinForms.UI\bin\Release\DBSizer.Data.dll
+D:\Work\DBSizer\DBSizer.WinForms.UI\bin\Release\DBSizer.Data.pdb
+D:\Work\DBSizer\DBSizer.WinForms.UI\bin\Release\DBSizer.ViewInterface.dll
+D:\Work\DBSizer\DBSizer.WinForms.UI\bin\Release\DBSizer.ViewInterface.pdb
+D:\Work\DBSizer\DBSizer.WinForms.UI\bin\Release\DBSizer.WinForms.UI.dll
+D:\Work\DBSizer\DBSizer.WinForms.UI\obj\Release\DBSizer.WinForms.UI.dll
