@@ -1,0 +1,12 @@
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\DBSizer.WPF.Tests.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\DBSizer.WPF.Tests.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\DBSizer.Data.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\DBSizer.ViewInterface.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\DBSizer.WPF.UI.exe
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\Rhino.Mocks.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\DBSizer.Data.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\DBSizer.ViewInterface.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\bin\Debug\DBSizer.WPF.UI.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\obj\Debug\DBSizer.WPF.Tests.csprojResolveAssemblyReference.cache
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\obj\Debug\DBSizer.WPF.Tests.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WPF.Tests\obj\Debug\DBSizer.WPF.Tests.pdb

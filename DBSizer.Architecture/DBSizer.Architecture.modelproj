@@ -9,6 +9,10 @@
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
     <Name>DBSizer.Architecture</Name>
     <RootNamespace>DBSizer.Architecture</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -28,16 +32,27 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Validate Include="DBSizerLayers.layerdiagram">
+    <Validate Include="DBSizer.WinForms.layerdiagram">
       <SubType>Content</SubType>
     </Validate>
-    <Validate Include="DBSizerLayers.layerdiagram.layout">
+    <Validate Include="DBSizer.WinForms.layerdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>DBSizerLayers.layerdiagram</DependentUpon>
+      <DependentUpon>DBSizer.WinForms.layerdiagram</DependentUpon>
     </Validate>
-    <Validate Include="DBSizerLayers.layerdiagram.suppressions">
+    <Validate Include="DBSizer.WinForms.layerdiagram.suppressions">
       <SubType>Content</SubType>
-      <DependentUpon>DBSizerLayers.layerdiagram</DependentUpon>
+      <DependentUpon>DBSizer.WinForms.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="DBSizer.WPF.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="DBSizer.WPF.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DBSizer.WPF.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="DBSizer.WPF.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>DBSizer.WPF.layerdiagram</DependentUpon>
     </Validate>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +75,10 @@
     <ProjectReference Include="..\DBSizer.WinForms.UI\DBSizer.WinForms.UI.csproj">
       <Name>DBSizer.WinForms.UI</Name>
       <Project>{d5c90716-2af2-4fb6-a043-008f1b9ab05b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DBSizer.WPF.UI\DBSizer.WPF.UI.csproj">
+      <Name>DBSizer.WPF.UI</Name>
+      <Project>{5c3adf56-6bed-4fdd-b4f1-c4b1ffcbf6aa}</Project>
     </ProjectReference>
   </ItemGroup>
 </Project>

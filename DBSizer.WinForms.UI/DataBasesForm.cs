@@ -14,30 +14,30 @@ namespace DBSizer.WinForms.UI
             InitializeComponent();
         }
 
-        public void SetDbListDataSource(List<DBInfo> dbDescriptions)
+        public void SetDbListDataSource(List<IDBInfo> dbDescriptions, List<IDBInfo> checkedItems)
         {
             clbDatabases.Items.Clear();
-            foreach (DBInfo dbDescription in dbDescriptions)
+            foreach (IDBInfo dbDescription in dbDescriptions)
             {
-                clbDatabases.Items.Add(dbDescription, true);
+                clbDatabases.Items.Add(dbDescription, checkedItems.Contains(dbDescription));
             }
         }
 
-        public void SetChartDataSource(List<DBInfo> dbDescriptions)
+        public void SetChartDataSource(List<IDBInfo> dbDescriptions)
         {
             chart.Visible = true;
             bsDBInfo.DataSource = dbDescriptions;
             chart.DataBind();
         }
 
-        public IEnumerable<DBInfo> CheckedDatabases()
+        public IEnumerable<IDBInfo> CheckedDatabases()
         {
-            return clbDatabases.CheckedItems.Cast<DBInfo>();
+            return clbDatabases.CheckedItems.Cast<IDBInfo>();
         }
 
-        public DBInfo SelectedDatabase
+        public IDBInfo SelectedDatabase
         {
-            get { return clbDatabases.Items[clbDatabases.SelectedIndex] as DBInfo; }
+            get { return clbDatabases.Items[clbDatabases.SelectedIndex] as IDBInfo; }
         }
 
         public event EventHandler ConnectClicked;
@@ -84,6 +84,12 @@ namespace DBSizer.WinForms.UI
             {
                 AnalyseClicked(this, EventArgs.Empty);
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new AboutForm();
+            form.ShowDialog();
         }
     }
 }

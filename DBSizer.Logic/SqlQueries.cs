@@ -34,11 +34,11 @@ ORDER BY
 select @PageSize=v.low/1024.0 from master.dbo.spt_values v where v.number=1 and v.type='E'
 
 SELECT
-ISNULL((select @PageSize * SUM(CASE WHEN a.type <> 1 THEN a.used_pages WHEN p.index_id < 2 THEN a.data_pages ELSE 0 END) 
-FROM sys.indexes as i
-JOIN sys.partitions as p ON p.object_id = i.object_id and p.index_id = i.index_id
-JOIN sys.allocation_units as a ON a.container_id = p.partition_id
-where i.object_id = tbl.object_id),0.0) AS [DataSpaceUsed]
+ISNULL((select @PageSize * SUM(CASE WHEN alloc.type <> 1 THEN alloc.used_pages WHEN parts.index_id < 2 THEN alloc.data_pages ELSE 0 END) 
+FROM sys.indexes as ind
+JOIN sys.partitions as parts ON parts.object_id = ind.object_id and parts.index_id = ind.index_id
+JOIN sys.allocation_units as alloc ON alloc.container_id = parts.partition_id
+where ind.object_id = tbl.object_id),0.0) AS [DataSpaceUsed]
 FROM
 sys.tables AS tbl
 WHERE
@@ -48,27 +48,27 @@ ISNULL( ( select sum (spart.rows) from sys.partitions spart where spart.object_i
 FROM
 sys.tables AS tbl
 INNER JOIN sys.indexes AS idx ON idx.object_id = tbl.object_id and idx.index_id < 2
-LEFT OUTER JOIN sys.data_spaces AS dstext  ON tbl.lob_data_space_id = dstext.data_space_id
-LEFT OUTER JOIN sys.data_spaces AS dsidx ON dsidx.data_space_id = idx.data_space_id
+--LEFT OUTER JOIN sys.data_spaces AS dstext  ON tbl.lob_data_space_id = dstext.data_space_id
+--LEFT OUTER JOIN sys.data_spaces AS dsidx ON dsidx.data_space_id = idx.data_space_id
 WHERE
 (tbl.name=N'{0}' and SCHEMA_NAME(tbl.schema_id)=N'{1}')";
         public const string QUERY_INDEX_SIZE = @"declare @PageSize float 
 select @PageSize=v.low/1024.0 from master.dbo.spt_values v where v.number=1 and v.type='E'
 SELECT
-ISNULL((select @PageSize * SUM(a.used_pages - CASE WHEN a.type <> 1 THEN a.used_pages WHEN p.index_id < 2 THEN a.data_pages ELSE 0 END) 
-FROM sys.indexes as i
-JOIN sys.partitions as p ON p.object_id = i.object_id and p.index_id = i.index_id
-JOIN sys.allocation_units as a ON a.container_id = p.partition_id
-where i.object_id = tbl.object_id),0.0) AS [IndexSpaceUsed]
+ISNULL((select @PageSize * SUM(alloc.used_pages - CASE WHEN alloc.type <> 1 THEN alloc.used_pages WHEN parts.index_id < 2 THEN alloc.data_pages ELSE 0 END) 
+FROM sys.indexes as ind
+JOIN sys.partitions as parts ON parts.object_id = ind.object_id and parts.index_id = ind.index_id
+JOIN sys.allocation_units as alloc ON alloc.container_id = parts.partition_id
+where ind.object_id = tbl.object_id),0.0) AS [IndexSpaceUsed]
 FROM
 sys.tables AS tbl
 WHERE
 (tbl.name=N'{0}' and SCHEMA_NAME(tbl.schema_id)=N'{1}')";
         public const string QUERY_DB_SIZE = @"SELECT
-CAST(ISNULL((select sum(gs.size)*convert(float,8) from sys.database_files gs where gs.data_space_id = g.data_space_id and type = 0), 0) AS float) AS [SizeData],
-CAST(ISNULL((select sum(gs.size)*convert(float,8) from sys.database_files gs where type = 1), 0) AS float) AS [SizeLog]
+CAST(ISNULL((select sum(df.size)*convert(float,8) from sys.database_files df where df.data_space_id = fg.data_space_id and type = 0), 0) AS float) AS [SizeData],
+CAST(ISNULL((select sum(df.size)*convert(float,8) from sys.database_files df where type = 1), 0) AS float) AS [SizeLog]
 FROM
-sys.filegroups AS g
+sys.filegroups AS fg
 ORDER BY
 [Name] ASC
 ";

@@ -1,0 +1,13 @@
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.Data.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.ViewInterface.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.ViewPresenter.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.Winforms.Starter.exe
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.WinForms.UI.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.WPF.UI.exe
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.Data.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.ViewInterface.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.ViewPresenter.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.Winforms.Starter.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.WinForms.UI.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\obj\Debug\DBSizer.Architecture.modelprojResolveAssemblyReference.cache
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Architecture\bin\Debug\DBSizer.WPF.UI.pdb

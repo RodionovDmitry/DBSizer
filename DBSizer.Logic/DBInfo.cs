@@ -6,33 +6,48 @@ namespace DBSizer.Data
     /// <summary>
     /// Descriptor of the Database
     /// </summary>
-    public class DBInfo
+    public interface IDBInfo
     {
-        public double DataSizeMB { get; set; }
-        public double LogSizeMB { get; set; }
+        double DataSizeMB { get; }
+        double LogSizeMB { get; }
+        double TotalSizeMB { get; }
+        string Name { get; }
+        string ConnString { get; }
+        string ToString();
+    }
+
+    /// <summary>
+    /// Implementation made internal for testing purposes
+    /// </summary>
+    internal class DBInfo : IDBInfo
+    {
+        public double DataSizeMB { get; private  set; }
+        public double LogSizeMB { get; private set; }
         public double TotalSizeMB
         {
             get { return DataSizeMB + LogSizeMB; }
         }
         public string Name { get; private set; }
         private readonly bool _infoGathered;
+        public string ConnString { get; private set; }
 
-        public DBInfo(string connString, string name)
+        internal DBInfo(string connString, string name)
         {
             Name = name;
+            ConnString = connString;
             using (var conn = new SqlConnection(connString))
             {
                 try
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand(SqlQueries.QUERY_DB_SIZE, conn);
+                    var cmd = new SqlCommand(SqlQueries.QUERY_DB_SIZE, conn);
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
                         if (sdr.Read())
                         {
-                            _infoGathered = true;
                             DataSizeMB = Math.Round(sdr.GetDouble(0) / 1024.0);
                             LogSizeMB = Math.Round(sdr.GetDouble(1)/1024.0);
+                            _infoGathered = true;
                         }
                     }
                 }
@@ -42,7 +57,7 @@ namespace DBSizer.Data
                 }
             }
         }
-
+        
         public override string ToString()
         {
             if (_infoGathered)

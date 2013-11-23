@@ -19,7 +19,8 @@ namespace DBSizer.Winforms.Starter
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var form = new DataBasesForm();
-            var presenter = new DataBasesPresenter(form, SqlQueryService.CreateSqlQueryService(), new WindowsIdentityProvider());
+            var presenter = new DataBasesPresenter(form, new SqlQueryExecutor(), 
+                new WindowsIdentityProvider(), new DBInfoBuilder());
             Application.Run(form);
         }
     }

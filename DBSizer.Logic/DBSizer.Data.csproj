@@ -11,6 +11,10 @@
     <AssemblyName>DBSizer.Data</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,14 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionStringBuilder.cs" />
+    <Compile Include="DBInfoBuilder.cs" />
+    <Compile Include="SqlAuthMode.cs" />
     <Compile Include="SqlQueries.cs" />
     <Compile Include="DBInfo.cs" />
-    <Compile Include="IProgressable.cs" />
     <Compile Include="ISqlQueryExecutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlQueryExecutor.cs" />
-    <Compile Include="SqlQueryService.cs" />
     <Compile Include="TableInfo.cs" />
+    <Compile Include="WindowsIdentityProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

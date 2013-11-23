@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace DBSizer.Data
 {
-    internal class SqlQueryExecutor : ISqlQueryExecutor
+    public class SqlQueryExecutor : ISqlQueryExecutor
     {
         public bool ConnectionIsValid(string serverConnectionString)
         {
@@ -29,7 +29,7 @@ namespace DBSizer.Data
                 conn.Open();
                 var cmd = new SqlCommand(SqlQueries.QUERY_ALL_DATABASES, conn);
                 var dbNames = new List<string>();
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
@@ -40,46 +40,46 @@ namespace DBSizer.Data
             }
         }
 
-        public List<TableInfo> LoadTableList(string databaseConnectionString, IProgressable progress)
+        public List<TableInfo> LoadTableList(string databaseConnectionString)
         {
-            List<TableInfo> _tables;
+            List<TableInfo> tables;
             using (var conn = new SqlConnection(databaseConnectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand(SqlQueries.QUERY_ALL_TABLES, conn);
-                using (SqlDataReader sdr = cmd.ExecuteReader())
+                using (var reader = cmd.ExecuteReader())
                 {
-                    _tables = new List<TableInfo>();
-                    while (sdr.Read())
+                    tables = new List<TableInfo>();
+                    while (reader.Read())
                     {
-                        _tables.Add(new TableInfo((string) sdr[0], (string) sdr[1]));
+                        tables.Add(new TableInfo(reader.GetString(0), reader.GetString(1)));
                     }
                 }
-            }
-
-            if (progress != null)
-            {
-                progress.SetMaximumProgress(_tables.Count);
-            }
-            using (var conn = new SqlConnection(databaseConnectionString))
-            {
-                conn.Open();
-                foreach (TableInfo ti in _tables)
+                int tableCount = 0;
+                foreach (var tableInfo in tables)
                 {
-                    var cmd = new SqlCommand(string.Format(SqlQueries.QUERY_DATA_SIZE, ti.Name, ti.Schema), conn);
+                    cmd = new SqlCommand(string.Format(SqlQueries.QUERY_DATA_SIZE, tableInfo.Name, tableInfo.Schema), conn);
                     cmd.CommandTimeout = 60000;
-                    ti.DataSizeBytes = (double) cmd.ExecuteScalar();
-                    cmd.CommandText = string.Format(SqlQueries.QUERY_INDEX_SIZE, ti.Name, ti.Schema);
-                    ti.IndexSizeBytes = (double) cmd.ExecuteScalar();
-                    cmd.CommandText = string.Format(SqlQueries.QUERY_ROW_COUNT, ti.Name, ti.Schema);
-                    ti.RowCount = (long) cmd.ExecuteScalar();
-                    if (progress != null)
-                    {
-                        progress.IncProgress();
-                    }
+                    tableInfo.DataSizeBytes = (double) cmd.ExecuteScalar();
+                    cmd.CommandText = string.Format(SqlQueries.QUERY_INDEX_SIZE, tableInfo.Name, tableInfo.Schema);
+                    tableInfo.IndexSizeBytes = (double) cmd.ExecuteScalar();
+                    cmd.CommandText = string.Format(SqlQueries.QUERY_ROW_COUNT, tableInfo.Name, tableInfo.Schema);
+                    tableInfo.RowCount = (long) cmd.ExecuteScalar();
+                    OnTableLoadProgressChanged(new ProgressEventArgs(tableCount++*100 / tables.Count));
                 }
             }
-            return _tables;
+            return tables;
+        }
+
+        /// <summary>
+        /// Reports loading progress in percent (0 to 100)
+        /// </summary>
+        public event ProgressEventHandler TableLoadProgressChanged;
+
+        protected virtual void OnTableLoadProgressChanged(ProgressEventArgs args)
+        {
+            ProgressEventHandler handler = TableLoadProgressChanged;
+            if (handler != null) handler(this, args);
         }
     }
 }

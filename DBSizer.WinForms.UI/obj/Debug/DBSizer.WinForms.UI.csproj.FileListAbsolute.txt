@@ -1,0 +1,15 @@
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\bin\Debug\DBSizer.WinForms.UI.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\bin\Debug\DBSizer.WinForms.UI.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\bin\Debug\DBSizer.Data.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\bin\Debug\DBSizer.ViewInterface.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\bin\Debug\DBSizer.Data.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\bin\Debug\DBSizer.ViewInterface.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.WinForms.UI.csprojResolveAssemblyReference.cache
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.WinForms.UI.DataBasesForm.resources
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.AboutForm.resources
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.WinForms.UI.Properties.Resources.resources
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.WinForms.UI.SqlConnectionSettingsControl.resources
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.WinForms.UI.DatabaseDetailsForm.resources
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.WinForms.UI.csproj.GenerateResource.Cache
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.WinForms.UI.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.WinForms.UI\obj\Debug\DBSizer.WinForms.UI.pdb

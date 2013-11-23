@@ -11,15 +11,19 @@ namespace DBSizer.ViewPresenter
         private readonly ISqlQueryExecutor _sqlExecutor;
         private readonly IDataBasesView _view;
         private SqlConnectionSettingsViewPresenter _settingsPresenter;
+        private readonly IDBInfoBuilder _dbInfoBuilder;
         private readonly IWindowsIdentityProvider _windowsIdentityProvider;
+        private const int DEFAULT_NUM_OF_DB_TO_SHOW = 7;
 
         public DataBasesPresenter(IDataBasesView view, 
             ISqlQueryExecutor sqlExecutor, 
-            IWindowsIdentityProvider windowsIdentityProvider)
+            IWindowsIdentityProvider windowsIdentityProvider,
+            IDBInfoBuilder dbInfoBuilder)
         {
             _view = view;
             _sqlExecutor = sqlExecutor;
             _windowsIdentityProvider = windowsIdentityProvider;
+            _dbInfoBuilder = dbInfoBuilder;
             _view.Shown += _view_Shown;
             _view.ConnectClicked += _view_ConnectClicked;
             _view.DataBaseCheckedChanged += _view_DataBaseCheckedChanged;
@@ -32,10 +36,12 @@ namespace DBSizer.ViewPresenter
             {
                 using (IDatabaseDetailsView detailsView = _view.CreateDatabaseDetailsView())
                 {
-                    var presenter = new DatabaseDetailsPresenter(detailsView, _sqlExecutor,
-                                                                 _settingsPresenter.ConnectionStringCreate(_view.SelectedDatabase.Name),
-                                                                 _view.SelectedDatabase.Name);
-                    detailsView.ShowModal();
+                    using (var presenter = new DatabaseDetailsPresenter(detailsView, _sqlExecutor,
+                                                                        ConnectionStringBuilder.ConnectionStringCreate(_view.SettingsView, _view.SelectedDatabase.Name),
+                                                                        _view.SelectedDatabase.Name))
+                    {
+                        detailsView.ShowModal();
+                    }
                 }
             }
         }
@@ -47,18 +53,18 @@ namespace DBSizer.ViewPresenter
 
         private void _view_ConnectClicked(object sender, EventArgs e)
         {
-            if (!_sqlExecutor.ConnectionIsValid(_settingsPresenter.MasterDBConnectionStringCreate()))
+            if (!_sqlExecutor.ConnectionIsValid(ConnectionStringBuilder.MasterDBConnectionStringCreate(_view.SettingsView)))
             {
                 _view.ShowError(@"Can't connect to server. Check connection settings, and make sure you have rights to connect that server.");
                 return;
             }
-            var databases = new List<DBInfo>();
-            foreach (string dbName in _sqlExecutor.LoadDatabaseList(_settingsPresenter.MasterDBConnectionStringCreate()))
+            var databases = new List<IDBInfo>();
+            foreach (string dbName in _sqlExecutor.LoadDatabaseList(ConnectionStringBuilder.MasterDBConnectionStringCreate(_view.SettingsView)))
             {
-                var dbInfo = new DBInfo(_settingsPresenter.ConnectionStringCreate(dbName), dbName);
+                var dbInfo = _dbInfoBuilder.Create(ConnectionStringBuilder.ConnectionStringCreate(_view.SettingsView, dbName), dbName);
                 databases.Add(dbInfo);
             }
-            _view.SetDbListDataSource(databases);
+            _view.SetDbListDataSource(databases, databases.OrderByDescending(x => x.TotalSizeMB).Take(DEFAULT_NUM_OF_DB_TO_SHOW).ToList());
         }
 
         private void _view_Shown(object sender, EventArgs e)

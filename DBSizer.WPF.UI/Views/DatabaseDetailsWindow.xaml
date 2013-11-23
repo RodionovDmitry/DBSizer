@@ -1,0 +1,132 @@
+﻿<Window x:Class="DBSizer.WPF.UI.Views.DatabaseDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:charting="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:data="clr-namespace:DBSizer.Data;assembly=DBSizer.Data"
+        xmlns:xc="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:viewModels="clr-namespace:DBSizer.WPF.UI.ViewModels"
+        xmlns:converters="clr-namespace:DBSizer.WPF.UI.Converters"
+        Title="{Binding WindowCaption}" 
+        Height="600" 
+        Width="600"
+        MinWidth="600"
+        MinHeight="600"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Window.DataContext>
+        <viewModels:DatabaseDetailsViewModel/>
+    </Window.DataContext>    
+    <Window.Resources>
+        <converters:EnumToBooleanConverter x:Key="EnumToBool"/>
+        <converters:CharacteristicToStringConverter x:Key="DataToString"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button 
+            Grid.Row="0" 
+            Margin="5"             
+            Command="{Binding Refresh}">
+            <StackPanel HorizontalAlignment="Stretch"  Orientation="Horizontal" >
+                <Image Margin="2" Width="16" HorizontalAlignment="Left" Source="..\Resources\refresh.png"/>
+                <TextBlock Text="Refresh"/>
+            </StackPanel>
+        </Button>
+        <RadioButton 
+            Grid.Row="0" 
+            Grid.Column="1" 
+            IsChecked="{Binding CharacteristicToDisplay, 
+                        Converter={StaticResource EnumToBool}, 
+                        ConverterParameter={x:Static data:Characteristic.DataSize}}" 
+            GroupName="0" 
+            VerticalAlignment="Center" 
+            Margin="5" 
+            Content="{Binding CharacteristicToDisplay, 
+                Converter={StaticResource DataToString}, 
+                ConverterParameter={x:Static data:Characteristic.DataSize}}"/>
+        <RadioButton 
+            Grid.Row="0" 
+            Grid.Column="2" 
+            IsChecked="{Binding CharacteristicToDisplay, 
+                        Converter={StaticResource EnumToBool}, 
+                        ConverterParameter={x:Static data:Characteristic.IndexSize}}" 
+            GroupName="1" 
+            VerticalAlignment="Center" 
+            Margin="5" 
+            Content="{Binding CharacteristicToDisplay, 
+                Converter={StaticResource DataToString}, 
+                ConverterParameter={x:Static data:Characteristic.IndexSize}}"/>
+        <RadioButton 
+            Grid.Row="0" 
+            Grid.Column="3" 
+            IsChecked="{Binding CharacteristicToDisplay, 
+                        Converter={StaticResource EnumToBool}, 
+                        ConverterParameter={x:Static data:Characteristic.RowCount}}" 
+            GroupName="2" 
+            VerticalAlignment="Center" 
+            Margin="5" 
+            Content="{Binding CharacteristicToDisplay, 
+                Converter={StaticResource DataToString}, 
+                ConverterParameter={x:Static data:Characteristic.RowCount}}"/>
+        <Grid Grid.Column="4"></Grid>
+        <Label VerticalAlignment="Center" Grid.Column="4" Content="Show biggest"/>
+        <xc:IntegerUpDown
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left" 
+            Grid.Column="4"
+            Value="{Binding NumValues}"
+            Margin="80,0,0,0"
+            />        
+        <Label VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="4" Content="values" Margin="120,0,0,0"/>
+        <charting:Chart 
+            Style="{StaticResource CommonChartStyle}"
+            Grid.Row="1" 
+            Grid.ColumnSpan="5">
+            <charting:StackedColumnSeries>
+                <charting:SeriesDefinition                        
+                        Title="{Binding CharacteristicToDisplay, Converter={StaticResource DataToString}}"
+                        ItemsSource="{Binding ItemsToShow}"
+                        IndependentValuePath="TableName"
+                        DependentValuePath="Value"
+                        DataPointStyle="{StaticResource DataPointStyleA}"/>                
+                <charting:StackedColumnSeries.IndependentAxis>
+                    <charting:CategoryAxis
+                            Orientation="X">
+                        <charting:CategoryAxis.AxisLabelStyle>
+                            <Style TargetType="charting:AxisLabel">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="charting:AxisLabel">
+                                            <TextBlock Margin="5" Text="{TemplateBinding FormattedContent}">
+                                                <TextBlock.LayoutTransform>
+                                                    <RotateTransform Angle="-90"/>
+                                                </TextBlock.LayoutTransform>
+                                            </TextBlock>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </charting:CategoryAxis.AxisLabelStyle>
+                    </charting:CategoryAxis>
+                </charting:StackedColumnSeries.IndependentAxis>
+            </charting:StackedColumnSeries>
+        </charting:Chart>
+        <ProgressBar 
+            Grid.Row="2" 
+            Grid.ColumnSpan="5"
+            Height="24"
+            Margin="5"
+            Visibility="{Binding ProgressVisible, Converter={StaticResource BoolToVis}}"
+            Value="{Binding ProgressValue, Mode=OneWay}"/>
+    </Grid>
+</Window>

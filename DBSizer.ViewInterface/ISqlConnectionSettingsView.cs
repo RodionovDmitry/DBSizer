@@ -1,13 +1,12 @@
 ﻿using System;
+using DBSizer.Data;
 
 namespace DBSizer.ViewInterface
 {
-    public interface ISqlConnectionSettingsView
+    public interface ISqlConnectionSettingsView : IConnectionSettings
     {
-        string ServerName { get; }
-        SqlAuthMode AuthMode { get; set; }
-        string UserName { get; set; }
-        string Password { get; }
+        new SqlAuthMode AuthMode { get; set; }
+        new string UserName { get;  set; }
 
         event EventHandler AuthModeChanged;
 

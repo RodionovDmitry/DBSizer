@@ -1,0 +1,5 @@
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Logic\bin\Debug\DBSizer.Data.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Logic\bin\Debug\DBSizer.Data.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Logic\obj\Debug\DBSizer.Data.csprojResolveAssemblyReference.cache
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Logic\obj\Debug\DBSizer.Data.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.Logic\obj\Debug\DBSizer.Data.pdb

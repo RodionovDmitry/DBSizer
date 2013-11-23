@@ -1,5 +1,0 @@
-D:\Work\DBSizer\DBSizer.Logic\bin\Release\DBSizer.Logic.dll
-D:\Work\DBSizer\DBSizer.Logic\bin\Release\DBSizer.Logic.pdb
-D:\Work\DBSizer\DBSizer.Logic\obj\Release\DBSizer.Logic.csprojResolveAssemblyReference.cache
-D:\Work\DBSizer\DBSizer.Logic\obj\Release\DBSizer.Logic.dll
-D:\Work\DBSizer\DBSizer.Logic\obj\Release\DBSizer.Logic.pdb

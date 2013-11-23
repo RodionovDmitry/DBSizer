@@ -42,7 +42,7 @@ namespace DBSizer.Data
         }
     }
 
-    public enum DataToDisplay
+    public enum Characteristic
     {
         DataSize = 1,
         IndexSize,
@@ -53,24 +53,24 @@ namespace DBSizer.Data
     {
         public string TableName { get; private set; }
         public double Value { get; private set; }
-        public TableInfoViewItem(TableInfo tableInfo, DataToDisplay dataToDisplay)
+        public TableInfoViewItem(TableInfo tableInfo, Characteristic characteristic)
         {
             TableName = tableInfo.Schema + "." + tableInfo.Name;
-            if (dataToDisplay == DataToDisplay.DataSize)
+            if (characteristic == Characteristic.DataSize)
             {
                 Value = tableInfo.DataSizeMB;
             }
-            else if (dataToDisplay == DataToDisplay.IndexSize)
+            else if (characteristic == Characteristic.IndexSize)
             {
                 Value = tableInfo.IndexSizeMB;
             }
-            else if (dataToDisplay == DataToDisplay.RowCount)
+            else if (characteristic == Characteristic.RowCount)
             {
                 Value = tableInfo.RowCount;
             }
             else
             {
-                throw new ArgumentException("unknown value of DataToDisplay", "dataToDisplay");
+                throw new ArgumentException("unknown value of characteristic", "characteristic");
             }
         }
     }
@@ -79,7 +79,7 @@ namespace DBSizer.Data
     {
         public int Compare(TableInfo x, TableInfo y)
         {
-            return -1 * x.DataSizeMB.CompareTo(y.DataSizeMB);
+            return x.DataSizeMB.CompareTo(y.DataSizeMB);
         }
     }
 
@@ -87,7 +87,7 @@ namespace DBSizer.Data
     {
         public int Compare(TableInfo x, TableInfo y)
         {
-            return -1 * x.IndexSizeMB.CompareTo(y.IndexSizeMB);
+            return  x.IndexSizeMB.CompareTo(y.IndexSizeMB);
         }
     }
 
@@ -95,7 +95,7 @@ namespace DBSizer.Data
     {
         public int Compare(TableInfo x, TableInfo y)
         {
-            return -1 * x.RowCount.CompareTo(y.RowCount);
+            return x.RowCount.CompareTo(y.RowCount);
         }
     }
 }

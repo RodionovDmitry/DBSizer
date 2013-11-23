@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3e6daf2c-624f-4b46-84dc-39d01ba74761" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="e18138de-b6bc-447a-a45a-416492cc2f10" name="Views">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="337a831b-c49c-49e4-92f5-c6981a8e596e" direction="Forward">
+          <layerMoniker Id="641c42d0-2cbd-4585-a3a8-a2ad8ef6975e" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="fce5203f-320b-4897-8805-5765e3d6aa2e" direction="Forward">
+          <layerMoniker Id="94c34aad-ef97-42ac-baf2-6da0e4ad9ae4" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="2596fa14-6480-4387-92d7-f0cd7b188c87" direction="Forward">
+          <layerMoniker Id="315c5296-b40d-4096-8d0e-9116c76b6ec3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="5d44dd7a-187d-4864-a68a-eb33b47174b6" name="Views">
+          <ArtifactNode Label="Views" Category="CodeSchema_ProjectItem" Id="(Assembly=../DBSizer.WPF.UI/DBSizer.WPF.UI.csproj File=../DBSizer.WPF.UI/Views/)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.Views Type=DatabaseDetailsWindow)" Label="DatabaseDetailsWindow" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.Views Type=IDatabaseDetailsWindow)" Label="IDatabaseDetailsWindow" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.Views Type=MainWindow)" Label="MainWindow" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.Views Type=IMainView)" Label="IMainView" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.Views Type=ISqlConnectionSettingsView)" Label="ISqlConnectionSettingsView" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.Views Type=SqlConnectionSettingsControl)" Label="SqlConnectionSettingsControl" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="94c34aad-ef97-42ac-baf2-6da0e4ad9ae4" name="ViewModels">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5a0727c5-080c-4e52-9ea9-a8e1284ac1d7" direction="Forward">
+          <layerMoniker Id="641c42d0-2cbd-4585-a3a8-a2ad8ef6975e" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="090ef2fb-9e22-4450-beb6-fe81ae3f750a" direction="Forward">
+          <layerMoniker Id="315c5296-b40d-4096-8d0e-9116c76b6ec3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="2e8581e6-e920-44ea-aea1-6a263b1516c3" name="ViewModels">
+          <ArtifactNode Label="ViewModels" Category="CodeSchema_ProjectItem" Id="(Assembly=../DBSizer.WPF.UI/DBSizer.WPF.UI.csproj File=../DBSizer.WPF.UI/ViewModels/)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewModels Type=DatabaseDetailsViewModel)" Label="DatabaseDetailsViewModel" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewModels Type=DBInfoListItem)" Label="DBInfoListItem" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewModels Type=IRefreshChartBinding)" Label="IRefreshChartBinding" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewModels Type=MainViewModel)" Label="MainViewModel" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewModels Type=SqlConnectionSettingsViewModel)" Label="SqlConnectionSettingsViewModel" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewModels Type=(Name=AuthMode ParentType=SqlConnectionSettingsViewModel))" Label="SqlConnectionSettingsViewModel‎.AuthMode" Category="CodeSchema_Enum">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewModels Type=ViewModelBase)" Label="ViewModelBase" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="641c42d0-2cbd-4585-a3a8-a2ad8ef6975e" name="ViewInterfaces">
+      <references>
+        <reference Id="1cbb6143-246d-4f48-98d9-207c0168b75d" name="ViewInterfaces">
+          <ArtifactNode Label="ViewInterfaces" Category="CodeSchema_ProjectItem" Id="(Assembly=../DBSizer.WPF.UI/DBSizer.WPF.UI.csproj File=../DBSizer.WPF.UI/ViewInterfaces/)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewInterfaces Type=IDatabaseDetailsWindow)" Label="IDatabaseDetailsWindow" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewInterfaces Type=IMainView)" Label="IMainView" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewInterfaces Type=IRefreshChartBinding)" Label="IRefreshChartBinding" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=DBSizer.WPF.UI Namespace=DBSizer.WPF.UI.ViewInterfaces Type=ISqlConnectionSettingsView)" Label="ISqlConnectionSettingsView" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="315c5296-b40d-4096-8d0e-9116c76b6ec3" name="DBSizer.Data">
+      <references>
+        <reference Id="0f221636-1ddd-4634-ba94-72c8f8f22b84" name="DBSizer.Data">
+          <ArtifactNode Label="DBSizer.Data" Category="CodeSchema_Project" Id="(Assembly=../DBSizer.Logic/DBSizer.Data.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=DBSizer.Data)" Label="DBSizer.Data.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

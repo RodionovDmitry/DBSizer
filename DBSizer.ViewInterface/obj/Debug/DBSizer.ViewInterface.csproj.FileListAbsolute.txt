@@ -1,0 +1,7 @@
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.ViewInterface\bin\Debug\DBSizer.ViewInterface.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.ViewInterface\bin\Debug\DBSizer.ViewInterface.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.ViewInterface\bin\Debug\DBSizer.Data.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.ViewInterface\bin\Debug\DBSizer.Data.pdb
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.ViewInterface\obj\Debug\DBSizer.ViewInterface.csprojResolveAssemblyReference.cache
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.ViewInterface\obj\Debug\DBSizer.ViewInterface.dll
+D:\Work\TFS\DBSizer\Main\Source\DBSizer\DBSizer.ViewInterface\obj\Debug\DBSizer.ViewInterface.pdb

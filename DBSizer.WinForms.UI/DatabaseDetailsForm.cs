@@ -22,30 +22,30 @@ namespace DBSizer.WinForms.UI
             get { return Convert.ToInt32(nudTopItemsCount.Value); }
         }
 
-        public DataToDisplay SelectedDataToDisplay
+        public Characteristic SelectedCharacteristic
         {
             get 
             { 
                 if (rbDataSize.Checked)
                 {
-                    return DataToDisplay.DataSize;
+                    return Characteristic.DataSize;
                 }
                 else if (rbIndexSize.Checked)
                 {
-                    return DataToDisplay.IndexSize;
+                    return Characteristic.IndexSize;
                 }
                 else if (rbRowCount.Checked)
                 {
-                    return DataToDisplay.RowCount;
+                    return Characteristic.RowCount;
                 }
                 else
                 {
-                    throw new InvalidOperationException("No DataToDisplay selected");
+                    throw new InvalidOperationException("No Characteristic selected");
                 }
             }
         }
 
-        public event EventHandler SelectedDataToDisplayChanged;
+        public event EventHandler SelectedCharacteristicChanged;
         public event EventHandler RefreshClicked;
         public void SetChartDataSource(List<TableInfoViewItem> values)
         {
@@ -57,8 +57,6 @@ namespace DBSizer.WinForms.UI
         {
             progressBar.Visible = true;
             progressBar.Value = 0;
-            this.Invalidate();
-            Application.DoEvents();
         }
 
         public void HideProgressBar()
@@ -76,28 +74,18 @@ namespace DBSizer.WinForms.UI
             this.ShowDialog();
         }
 
-        public void SetMaximumProgress(int max)
+        public void SetProgress(int progressValue)
         {
-            progressBar.Value = 0;
-            progressBar.Maximum = max;
-            this.Invalidate();
-            Application.DoEvents();
-        }
-
-        public void IncProgress()
-        {
-            if (progressBar.Value < progressBar.Maximum)
+            if (progressValue < progressBar.Maximum)
             {
-                progressBar.Value++;
-                this.Invalidate();
-                Application.DoEvents();
+                progressBar.Value = progressValue;
             }
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (SelectedDataToDisplayChanged != null)
-                SelectedDataToDisplayChanged(this, EventArgs.Empty);
+            if (SelectedCharacteristicChanged != null)
+                SelectedCharacteristicChanged(this, EventArgs.Empty);
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
@@ -106,6 +94,4 @@ namespace DBSizer.WinForms.UI
                 RefreshClicked(this, EventArgs.Empty);
         }
     }
-
-
 }

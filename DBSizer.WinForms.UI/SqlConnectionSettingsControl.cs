@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using DBSizer.Data;
 using DBSizer.ViewInterface;
 
 namespace DBSizer.WinForms.UI

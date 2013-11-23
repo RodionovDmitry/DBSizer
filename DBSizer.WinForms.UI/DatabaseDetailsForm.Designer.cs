@@ -31,8 +31,8 @@ namespace DBSizer.WinForms.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btRefresh = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -181,47 +181,47 @@ namespace DBSizer.WinForms.UI
             // 
             this.btClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btClose.Location = new System.Drawing.Point(527, 3);
+            this.btClose.Location = new System.Drawing.Point(527, 5);
             this.btClose.Name = "btClose";
-            this.btClose.Size = new System.Drawing.Size(75, 23);
+            this.btClose.Size = new System.Drawing.Size(75, 24);
             this.btClose.TabIndex = 0;
             this.btClose.Text = "Close";
             this.btClose.UseVisualStyleBackColor = true;
             // 
             // chart
             // 
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.LabelAutoFitStyle = System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.None;
-            chartArea1.AxisX.LabelStyle.Angle = -90;
-            chartArea1.AxisX.LabelStyle.Interval = 1D;
-            chartArea1.AxisX.MajorTickMark.Interval = 1D;
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
+            chartArea2.AxisX.IsLabelAutoFit = false;
+            chartArea2.AxisX.LabelAutoFitStyle = System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.None;
+            chartArea2.AxisX.LabelStyle.Angle = -90;
+            chartArea2.AxisX.LabelStyle.Interval = 1D;
+            chartArea2.AxisX.MajorTickMark.Interval = 1D;
+            chartArea2.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea2);
             this.chart.DataSource = this.bsData;
             this.chart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart.Location = new System.Drawing.Point(0, 48);
             this.chart.Name = "chart";
-            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series1.CustomProperties = "MinPixelPointWidth=10";
-            series1.IsValueShownAsLabel = true;
-            series1.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series1.LabelFormat = "### ### ### ###.##";
-            series1.Name = "Series1";
-            series1.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            series1.XValueMember = "TableName";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series1.YValueMembers = "Value";
-            this.chart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.Color = System.Drawing.Color.Goldenrod;
+            series2.CustomProperties = "MinPixelPointWidth=10";
+            series2.IsValueShownAsLabel = true;
+            series2.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            series2.LabelFormat = "### ### ### ###.##";
+            series2.Name = "Series1";
+            series2.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            series2.XValueMember = "TableName";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series2.YValueMembers = "Value";
+            this.chart.Series.Add(series2);
             this.chart.Size = new System.Drawing.Size(605, 509);
             this.chart.TabIndex = 2;
             // 
             // bsData
             // 
-            this.bsData.DataSource = typeof(TableInfoViewItem);
+            this.bsData.DataSource = typeof(DBSizer.Data.TableInfoViewItem);
             // 
-            // TablesChartForm
+            // DatabaseDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,7 +230,8 @@ namespace DBSizer.WinForms.UI
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(621, 441);
-            this.Name = "TablesChartForm";
+            this.Name = "DatabaseDetailsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Database [0] details";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

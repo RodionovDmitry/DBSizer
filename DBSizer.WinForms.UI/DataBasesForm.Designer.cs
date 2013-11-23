@@ -43,11 +43,14 @@ namespace DBSizer.WinForms.UI
             this.clbDatabases = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.sqlConnectionSettingsView = new DBSizer.WinForms.UI.SqlConnectionSettingsControl();
             this.btConnect = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btAnalyse = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.sqlConnectionSettingsView = new DBSizer.WinForms.UI.SqlConnectionSettingsControl();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDBInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -56,6 +59,7 @@ namespace DBSizer.WinForms.UI
             this.splitContainer1.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,9 +79,9 @@ namespace DBSizer.WinForms.UI
             this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(0, 0);
             this.chart.Name = "chart";
-            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.Color = System.Drawing.Color.Goldenrod;
             series1.CustomProperties = "MinPixelPointWidth=10";
             series1.IsValueShownAsLabel = true;
             series1.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -90,6 +94,7 @@ namespace DBSizer.WinForms.UI
             series1.YValueMembers = "DataSizeMB";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.Color = System.Drawing.Color.DarkSeaGreen;
             series2.IsValueShownAsLabel = true;
             series2.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             series2.LabelFormat = "### ### ### ###";
@@ -106,7 +111,7 @@ namespace DBSizer.WinForms.UI
             // 
             // bsDBInfo
             // 
-            this.bsDBInfo.DataSource = typeof(DBInfo);
+            this.bsDBInfo.DataSource = typeof(DBSizer.Data.IDBInfo);
             // 
             // splitContainer1
             // 
@@ -141,43 +146,79 @@ namespace DBSizer.WinForms.UI
             // 
             this.clbDatabases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clbDatabases.FormattingEnabled = true;
-            this.clbDatabases.Location = new System.Drawing.Point(0, 185);
+            this.clbDatabases.Location = new System.Drawing.Point(0, 202);
             this.clbDatabases.Name = "clbDatabases";
-            this.clbDatabases.Size = new System.Drawing.Size(374, 473);
+            this.clbDatabases.Size = new System.Drawing.Size(374, 456);
             this.clbDatabases.TabIndex = 2;
             this.clbDatabases.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbDatabases_ItemCheck);
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 162);
+            this.label1.Location = new System.Drawing.Point(0, 179);
             this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(3);
             this.label1.Size = new System.Drawing.Size(374, 23);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Check / Uncheck databases to view on chart";
+            this.label1.Text = "Check databases to view them on chart";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.sqlConnectionSettingsView);
             this.panel2.Controls.Add(this.btConnect);
+            this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(374, 162);
+            this.panel2.Size = new System.Drawing.Size(374, 179);
             this.panel2.TabIndex = 4;
+            // 
+            // sqlConnectionSettingsView
+            // 
+            this.sqlConnectionSettingsView.AuthMode = SqlAuthMode.Windows;
+            this.sqlConnectionSettingsView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sqlConnectionSettingsView.Location = new System.Drawing.Point(0, 24);
+            this.sqlConnectionSettingsView.Name = "sqlConnectionSettingsView";
+            this.sqlConnectionSettingsView.Size = new System.Drawing.Size(374, 120);
+            this.sqlConnectionSettingsView.TabIndex = 0;
+            this.sqlConnectionSettingsView.UserName = "";
             // 
             // btConnect
             // 
             this.btConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btConnect.Location = new System.Drawing.Point(276, 136);
+            this.btConnect.Location = new System.Drawing.Point(276, 150);
             this.btConnect.Name = "btConnect";
             this.btConnect.Size = new System.Drawing.Size(86, 23);
             this.btConnect.TabIndex = 1;
             this.btConnect.Text = "Connect";
             this.btConnect.UseVisualStyleBackColor = true;
             this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(374, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Text = "About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -190,6 +231,8 @@ namespace DBSizer.WinForms.UI
             // 
             // btAnalyse
             // 
+            this.btAnalyse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btAnalyse.Location = new System.Drawing.Point(3, 3);
             this.btAnalyse.Name = "btAnalyse";
             this.btAnalyse.Size = new System.Drawing.Size(368, 30);
@@ -198,21 +241,13 @@ namespace DBSizer.WinForms.UI
             this.btAnalyse.UseVisualStyleBackColor = true;
             this.btAnalyse.Click += new System.EventHandler(this.btAnalyse_Click);
             // 
-            // sqlConnectionSettingsView
-            // 
-            this.sqlConnectionSettingsView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sqlConnectionSettingsView.Location = new System.Drawing.Point(0, 0);
-            this.sqlConnectionSettingsView.Name = "sqlConnectionSettingsView";
-            this.sqlConnectionSettingsView.Size = new System.Drawing.Size(374, 130);
-            this.sqlConnectionSettingsView.TabIndex = 0;
-            this.sqlConnectionSettingsView.UserName = "";
-            // 
             // DataBasesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 694);
             this.Controls.Add(this.splitContainer1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(897, 460);
             this.Name = "DataBasesForm";
             this.Text = "DB Sizer by Rodionov Dmitry";
@@ -224,6 +259,9 @@ namespace DBSizer.WinForms.UI
             this.splitContainer1.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -243,6 +281,9 @@ namespace DBSizer.WinForms.UI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btAnalyse;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

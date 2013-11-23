@@ -6,11 +6,11 @@ namespace DBSizer.ViewInterface
 {
     public interface IDataBasesView
     {
-        DBInfo SelectedDatabase { get; }
+        IDBInfo SelectedDatabase { get; }
         ISqlConnectionSettingsView SettingsView { get; }
-        void SetDbListDataSource(List<DBInfo> dbDescriptions);
-        void SetChartDataSource(List<DBInfo> dbDescriptions);
-        IEnumerable<DBInfo> CheckedDatabases();
+        void SetDbListDataSource(List<IDBInfo> dbDescriptions, List<IDBInfo> checkedItems);
+        void SetChartDataSource(List<IDBInfo> dbDescriptions);
+        IEnumerable<IDBInfo> CheckedDatabases();
         event EventHandler ConnectClicked;
         event EventHandler DataBaseCheckedChanged;
         event EventHandler Shown;
