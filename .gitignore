@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DBSizer.Logic/bin/Release
+/DBSizer.Logic/obj/Release
+/DBSizer.ViewInterface/bin/Release
+/DBSizer.ViewInterface/obj/Release
+/DBSizer.ViewPresenter/bin/Release
+/DBSizer.ViewPresenter/obj/Release
+/DBSizer.Winforms.Starter/bin/Release
+/DBSizer.Winforms.Starter/obj/Release
+/DBSizer.WinForms.UI/bin/Release
+/DBSizer.WinForms.UI/obj/Release
+/DBSizer.WPF.Tests/bin/Release
+/DBSizer.WPF.Tests/obj/Release
+/DBSizer.WPF.UI/bin/Release
+/DBSizer.WPF.UI/obj/Release
+/.vs/DBSizer/v14/.suo
