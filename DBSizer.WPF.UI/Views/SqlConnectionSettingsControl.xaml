@@ -17,6 +17,6 @@
         <Label Content="User name" HorizontalAlignment="Left" Margin="31,75,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="38,106,0,0" VerticalAlignment="Top"/>
         <TextBox Text="{Binding UserName}" IsEnabled="{Binding UserNameAndPasswordEnabled}" HorizontalAlignment="Left" Height="23" Margin="108,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox Text="{Binding Password}"  IsEnabled="{Binding UserNameAndPasswordEnabled}" HorizontalAlignment="Left" Height="23" Margin="108,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <PasswordBox Password="{Binding Password}" PasswordChar="*"  IsEnabled="{Binding UserNameAndPasswordEnabled}" HorizontalAlignment="Left" Height="23" Margin="108,109,0,0" VerticalAlignment="Top" Width="182"/>
     </Grid>
 </UserControl>
